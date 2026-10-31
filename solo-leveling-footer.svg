@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="100" viewBox="0 0 800 100">
+  <defs>
+    <style>
+      @keyframes bgPulse {
+        0%, 100% { opacity: 1; }
+        50%       { opacity: 0.9; }
+      }
+      @keyframes textGlow {
+        0%, 100% { filter: drop-shadow(0 0 6px #a855f7) drop-shadow(0 0 14px #6d28d9); }
+        50%      { filter: drop-shadow(0 0 14px #c084fc) drop-shadow(0 0 30px #7c3aed); }
+      }
+      @keyframes waveShift {
+        0%   { transform: translateX(0px); }
+        100% { transform: translateX(-200px); }
+      }
+      @keyframes wavePulse {
+        0%, 100% { opacity: 0.55; }
+        50%       { opacity: 0.85; }
+      }
+      @keyframes runePulse {
+        0%, 100% { opacity: 0.2; }
+        50%      { opacity: 0.8; }
+      }
+      @keyframes borderAnim {
+        0%, 100% { stroke-opacity: 0.5; }
+        50%      { stroke-opacity: 0.9; }
+      }
+      @keyframes sparkFloat {
+        0%   { transform: translateY(0);    opacity: 0; }
+        15%  { opacity: 0.9; }
+        85%  { opacity: 0.5; }
+        100% { transform: translateY(-90px); opacity: 0; }
+      }
+      .bg        { animation: bgPulse 4s ease-in-out infinite; }
+      .main-text { animation: textGlow 2.5s ease-in-out infinite; }
+      .wave-g    { animation: waveShift 8s linear infinite; }
+      .wave-wrap { animation: wavePulse 3s ease-in-out infinite; }
+      .rune-a    { animation: runePulse 2.8s ease-in-out infinite; }
+      .rune-b    { animation: runePulse 2.8s ease-in-out 1s infinite; }
+      .rune-c    { animation: runePulse 2.8s ease-in-out 1.8s infinite; }
+      .border    { animation: borderAnim 2.5s ease-in-out infinite; }
+    </style>
+    <radialGradient id="f_bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%"   stop-color="#140025"/>
+      <stop offset="100%" stop-color="#0a0010"/>
+    </radialGradient>
+    <linearGradient id="f_line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#6d28d9" stop-opacity="0"/>
+      <stop offset="25%"  stop-color="#a855f7" stop-opacity="0.8"/>
+      <stop offset="50%"  stop-color="#c084fc" stop-opacity="1"/>
+      <stop offset="75%"  stop-color="#a855f7" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#6d28d9" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="wave_grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#7c3aed" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#4c1d95" stop-opacity="0.1"/>
+    </linearGradient>
+    <filter id="f_glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="f_strong" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="wave_clip">
+      <rect x="0" y="0" width="800" height="100"/>
+    </clipPath>
+  </defs>
+
+  <rect class="bg" width="800" height="100" rx="8" fill="url(#f_bg)"/>
+
+  <!-- Wave energy -->
+  <g class="wave-wrap" clip-path="url(#wave_clip)">
+    <g class="wave-g">
+      <path d="M0,80 C50,67 100,87 150,75 C200,63 250,85 300,73 C350,61 400,83 450,71 C500,59 550,81 600,69 C650,57 700,79 750,67 C800,55 850,77 900,65 C950,53 1000,75 1000,80 L1000,100 L0,100 Z"
+            fill="url(#wave_grad)" opacity="0.6"/>
+      <path d="M0,88 C40,76 90,94 140,82 C190,70 240,92 290,80 C340,68 390,90 440,78 C490,66 540,88 590,76 C640,64 690,86 740,74 C790,62 840,84 890,72 C940,60 990,82 1000,88 L1000,100 L0,100 Z"
+            fill="#6d28d9" opacity="0.3"/>
+      <path d="M1000,80 C1050,67 1100,87 1150,75 C1200,63 1250,85 1300,73 C1350,61 1400,83 1450,71 C1500,59 1550,81 1600,69 C1650,57 1700,79 1750,67 C1800,55 1850,77 1900,65 C1950,53 2000,75 2000,80 L2000,100 L1000,100 Z"
+            fill="url(#wave_grad)" opacity="0.6"/>
+      <path d="M1000,88 C1040,76 1090,94 1140,82 C1190,70 1240,92 1290,80 C1340,68 1390,90 1440,78 C1490,66 1540,88 1590,76 C1640,64 1690,86 1740,74 C1790,62 1840,84 1890,72 C1940,60 1990,82 2000,88 L2000,100 L1000,100 Z"
+            fill="#6d28d9" opacity="0.3"/>
+    </g>
+  </g>
+
+  <rect x="0" y="0" width="800" height="0.5" fill="url(#f_line)" opacity="0.4"/>
+  <rect class="border" x="1.5" y="1.5" width="797" height="97" rx="7.5" fill="none"
+        stroke="#9333ea" stroke-width="1.2" stroke-opacity="0.5"/>
+
+  <!-- Left runes -->
+  <text class="rune-a" x="30"  y="58" font-size="22" fill="#a855f7" text-anchor="middle" filter="url(#f_glow)" font-family="serif">ᚢ</text>
+  <text class="rune-b" x="60"  y="38" font-size="14" fill="#7c3aed" text-anchor="middle" filter="url(#f_glow)" font-family="serif">ᚱ</text>
+  <text class="rune-c" x="80"  y="75" font-size="11" fill="#6d28d9" text-anchor="middle" filter="url(#f_glow)" font-family="serif">ᛟ</text>
+
+  <!-- Right runes -->
+  <text class="rune-a" x="770" y="58" font-size="22" fill="#a855f7" text-anchor="middle" filter="url(#f_glow)" font-family="serif">ᚦ</text>
+  <text class="rune-b" x="740" y="38" font-size="14" fill="#7c3aed" text-anchor="middle" filter="url(#f_glow)" font-family="serif">ᛊ</text>
+  <text class="rune-c" x="720" y="75" font-size="11" fill="#6d28d9" text-anchor="middle" filter="url(#f_glow)" font-family="serif">ᚾ</text>
+
+  <!-- Particles -->
+  <circle cx="300" cy="90" r="1.8" fill="#c084fc" style="animation: sparkFloat 3.5s ease-in 0s infinite"/>
+  <circle cx="360" cy="92" r="1.2" fill="#a855f7" style="animation: sparkFloat 3.5s ease-in 0.7s infinite"/>
+  <circle cx="400" cy="90" r="2"   fill="#ddd6fe" style="animation: sparkFloat 3.5s ease-in 1.4s infinite"/>
+  <circle cx="440" cy="92" r="1.2" fill="#c084fc" style="animation: sparkFloat 3.5s ease-in 2.1s infinite"/>
+  <circle cx="500" cy="90" r="1.8" fill="#a855f7" style="animation: sparkFloat 3.5s ease-in 2.8s infinite"/>
+  <circle cx="200" cy="91" r="1.4" fill="#e9d5ff" style="animation: sparkFloat 3.5s ease-in 0.3s infinite"/>
+  <circle cx="600" cy="91" r="1.4" fill="#e9d5ff" style="animation: sparkFloat 3.5s ease-in 1.7s infinite"/>
+
+  <!-- Center glow -->
+  <ellipse cx="400" cy="52" rx="180" ry="25" fill="#7c3aed" opacity="0.06" filter="url(#f_strong)"/>
+
+  <!-- Main text -->
+  <text class="main-text"
+        x="400" y="62"
+        font-size="34"
+        font-weight="700"
+        fill="#e9d5ff"
+        text-anchor="middle"
+        letter-spacing="8"
+        font-family="Georgia, 'Times New Roman', serif"
+        filter="url(#f_strong)">SHADOW MONARCH</text>
+
+  <!-- Decorative arrows -->
+  <line x1="108" y1="55" x2="228" y2="55" stroke="#7c3aed" stroke-width="0.8" stroke-opacity="0.6"/>
+  <line x1="572" y1="55" x2="692" y2="55" stroke="#7c3aed" stroke-width="0.8" stroke-opacity="0.6"/>
+  <polygon points="233,51 240,55 233,59" fill="#a855f7" opacity="0.7"/>
+  <polygon points="567,51 560,55 567,59" fill="#a855f7" opacity="0.7"/>
+
+  <!-- Corner marks -->
+  <polygon points="8,8 14,14 8,20 2,14"    fill="#7c3aed" opacity="0.6"/>
+  <polygon points="792,8 798,14 792,20 786,14" fill="#7c3aed" opacity="0.6"/>
+</svg>

@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="120" viewBox="0 0 500 120">
+  <defs>
+    <style>
+      @keyframes borderPulse {
+        0%, 100% {
+          filter: drop-shadow(0 0 4px #7c3aed) drop-shadow(0 0 8px #4c1d95);
+          stroke-opacity: 0.7;
+        }
+        50% {
+          filter: drop-shadow(0 0 10px #a855f7) drop-shadow(0 0 20px #7c3aed);
+          stroke-opacity: 1;
+        }
+      }
+      @keyframes cornerGlow {
+        0%, 100% { opacity: 0.4; }
+        50%       { opacity: 1; }
+      }
+      @keyframes runePulse {
+        0%, 100% { opacity: 0.2; }
+        50%       { opacity: 0.9; }
+      }
+      @keyframes textAppear {
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      @keyframes titleGlow {
+        0%, 100% { filter: drop-shadow(0 0 4px #c084fc); }
+        50%       { filter: drop-shadow(0 0 10px #c084fc) drop-shadow(0 0 20px #7c3aed); }
+      }
+      @keyframes scanH {
+        0%   { transform: translateY(-5px);  opacity: 0; }
+        5%   { opacity: 0.5; }
+        95%  { opacity: 0.3; }
+        100% { transform: translateY(125px); opacity: 0; }
+      }
+      @keyframes bgShimmer {
+        0%, 100% { opacity: 1; }
+        50%       { opacity: 0.92; }
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 0.85; }
+        50% { opacity: 0.3; }
+      }
+      .bg       { animation: bgShimmer 5s ease-in-out infinite; }
+      .border   { animation: borderPulse 2.5s ease-in-out infinite; }
+      .corner   { animation: cornerGlow 2.5s ease-in-out infinite; }
+      .corner2  { animation: cornerGlow 2.5s ease-in-out 0.8s infinite; }
+      .rune-a   { animation: runePulse 2.8s ease-in-out infinite; }
+      .rune-b   { animation: runePulse 2.8s ease-in-out 1s infinite; }
+      .sys-title{ animation: titleGlow 2.5s ease-in-out infinite, textAppear 1.5s ease-out forwards; opacity: 0; }
+      .body-txt { animation: textAppear 1.5s ease-out 1s forwards; opacity: 0; }
+      .rank-txt { animation: textAppear 1.5s ease-out 1.8s forwards; opacity: 0; }
+      .scan     { animation: scanH 7s linear 0.5s infinite; }
+    </style>
+    <radialGradient id="ss_bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%"   stop-color="#16002a"/>
+      <stop offset="100%" stop-color="#0a0010"/>
+    </radialGradient>
+    <linearGradient id="ss_line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#7c3aed" stop-opacity="0"/>
+      <stop offset="40%"  stop-color="#a855f7" stop-opacity="0.9"/>
+      <stop offset="60%"  stop-color="#c084fc" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="ss_glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ss_strong" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="500" height="120" rx="8" fill="url(#ss_bg)"/>
+
+  <!-- Grid -->
+  <line x1="0" y1="38" x2="500" y2="38" stroke="#7c3aed" stroke-width="0.3" stroke-opacity="0.2"/>
+  <line x1="0" y1="60" x2="500" y2="60" stroke="#7c3aed" stroke-width="0.3" stroke-opacity="0.1"/>
+  <line x1="0" y1="90" x2="500" y2="90" stroke="#7c3aed" stroke-width="0.3" stroke-opacity="0.12"/>
+
+  <!-- Scan line -->
+  <rect class="scan" x="0" y="0" width="500" height="1" fill="url(#ss_line)" opacity="0.4"/>
+
+  <!-- Outer border -->
+  <rect class="border" x="2" y="2" width="496" height="116" rx="7"
+        fill="none" stroke="#9333ea" stroke-width="1.8"/>
+  <rect x="6" y="6" width="488" height="108" rx="5"
+        fill="none" stroke="#4c1d95" stroke-width="0.6" stroke-opacity="0.5"/>
+
+  <!-- Top-left corner -->
+  <g class="corner">
+    <line x1="2" y1="2" x2="22" y2="2"  stroke="#c084fc" stroke-width="1.5" filter="url(#ss_glow)"/>
+    <line x1="2" y1="2" x2="2"  y2="22" stroke="#c084fc" stroke-width="1.5" filter="url(#ss_glow)"/>
+    <polygon points="2,2 10,10 2,18" fill="#7c3aed" opacity="0.5"/>
+    <text class="rune-a" x="18" y="22" font-size="13" fill="#a855f7" text-anchor="middle" filter="url(#ss_glow)" font-family="serif">ᚢ</text>
+  </g>
+  <!-- Top-right corner -->
+  <g class="corner2">
+    <line x1="498" y1="2" x2="478" y2="2"   stroke="#c084fc" stroke-width="1.5" filter="url(#ss_glow)"/>
+    <line x1="498" y1="2" x2="498" y2="22"  stroke="#c084fc" stroke-width="1.5" filter="url(#ss_glow)"/>
+    <polygon points="498,2 490,10 498,18" fill="#7c3aed" opacity="0.5"/>
+    <text class="rune-b" x="482" y="22" font-size="13" fill="#a855f7" text-anchor="middle" filter="url(#ss_glow)" font-family="serif">ᚦ</text>
+  </g>
+  <!-- Bottom-left corner -->
+  <g class="corner2">
+    <line x1="2"   y1="118" x2="22"  y2="118" stroke="#c084fc" stroke-width="1.5" filter="url(#ss_glow)"/>
+    <line x1="2"   y1="118" x2="2"   y2="98"  stroke="#c084fc" stroke-width="1.5" filter="url(#ss_glow)"/>
+    <polygon points="2,118 10,110 2,102" fill="#7c3aed" opacity="0.5"/>
+    <text class="rune-a" x="18" y="112" font-size="13" fill="#a855f7" text-anchor="middle" filter="url(#ss_glow)" font-family="serif">ᛊ</text>
+  </g>
+  <!-- Bottom-right corner -->
+  <g class="corner">
+    <line x1="498" y1="118" x2="478" y2="118" stroke="#c084fc" stroke-width="1.5" filter="url(#ss_glow)"/>
+    <line x1="498" y1="118" x2="498" y2="98"  stroke="#c084fc" stroke-width="1.5" filter="url(#ss_glow)"/>
+    <polygon points="498,118 490,110 498,102" fill="#7c3aed" opacity="0.5"/>
+    <text class="rune-b" x="482" y="112" font-size="13" fill="#a855f7" text-anchor="middle" filter="url(#ss_glow)" font-family="serif">ᚾ</text>
+  </g>
+
+  <!-- Side runes -->
+  <text class="rune-a" x="35" y="65" font-size="10" fill="#6d28d9" text-anchor="middle" filter="url(#ss_glow)" font-family="serif">ᛟ</text>
+  <text class="rune-b" x="465" y="65" font-size="10" fill="#6d28d9" text-anchor="middle" filter="url(#ss_glow)" font-family="serif">ᚷ</text>
+
+  <!-- Divider under title -->
+  <rect x="20" y="38" width="460" height="0.8" fill="url(#ss_line)" opacity="0.7"/>
+  <polygon points="250,34 254,38 250,42 246,38" fill="#a855f7" opacity="0.8" filter="url(#ss_glow)"/>
+
+  <!-- Title -->
+  <text class="sys-title"
+        x="250" y="28"
+        font-size="14"
+        font-weight="700"
+        fill="#c084fc"
+        text-anchor="middle"
+        letter-spacing="3.5"
+        font-family="'Courier New', Courier, monospace"
+        filter="url(#ss_strong)">[ SYSTEM STATUS ]</text>
+
+  <!-- Class row -->
+  <text class="body-txt" x="50" y="62" font-size="11" fill="#9ca3af" letter-spacing="1"
+        font-family="'Courier New', Courier, monospace">CLASS</text>
+  <text class="body-txt" x="115" y="62" font-size="11" fill="#7c3aed" letter-spacing="1"
+        font-family="'Courier New', Courier, monospace">:</text>
+  <text class="body-txt" x="130" y="62" font-size="11.5" fill="#e9d5ff" letter-spacing="1.2"
+        font-family="'Courier New', Courier, monospace" filter="url(#ss_glow)">Full Stack Developer</text>
+
+  <!-- Rank row -->
+  <text class="rank-txt" x="50" y="85" font-size="11" fill="#9ca3af" letter-spacing="1"
+        font-family="'Courier New', Courier, monospace">RANK</text>
+  <text class="rank-txt" x="115" y="85" font-size="11" fill="#7c3aed" letter-spacing="1"
+        font-family="'Courier New', Courier, monospace">:</text>
+  <rect class="rank-txt" x="128" y="73" width="52" height="17" rx="3" fill="#4c1d95" opacity="0.7"/>
+  <text class="rank-txt" x="132" y="85" font-size="11.5" fill="#c084fc" letter-spacing="1"
+        font-family="'Courier New', Courier, monospace" filter="url(#ss_glow)">S-Class</text>
+  <text class="rank-txt" x="188" y="85" font-size="11.5" fill="#e9d5ff" letter-spacing="1"
+        font-family="'Courier New', Courier, monospace">Student</text>
+
+  <!-- Status dots -->
+  <circle cx="440" cy="60" r="3.5" fill="#22c55e" opacity="0.85" filter="url(#ss_glow)">
+    <animate attributeName="opacity" values="0.85;0.3;0.85" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="450" y="64" font-size="9" fill="#4ade80" font-family="'Courier New', Courier, monospace"
+        opacity="0.8" letter-spacing="1">ONLINE</text>
+
+  <circle cx="440" cy="84" r="3.5" fill="#a855f7" opacity="0.85" filter="url(#ss_glow)">
+    <animate attributeName="opacity" values="0.85;0.2;0.85" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <text x="450" y="88" font-size="9" fill="#c084fc" font-family="'Courier New', Courier, monospace"
+        opacity="0.8" letter-spacing="1">ACTIVE</text>
+
+  <!-- Divider accent marks -->
+  <polygon points="40,38 44,34 48,38" fill="#7c3aed" opacity="0.5"/>
+  <polygon points="460,38 456,34 452,38" fill="#7c3aed" opacity="0.5"/>
+</svg>
