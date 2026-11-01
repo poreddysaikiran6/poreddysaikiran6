@@ -29,7 +29,7 @@
 
 <!-- ══════ TYPING ANIMATION (Epic Solo Leveling & Guardian Quotes) ══════ -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&size=23&duration=2800&pause=900&color=A855F7&center=true&vCenter=true&width=820&lines=%5BSYSTEM%5D+Awakened+S-Rank+Hunter%3A+Porreddy+Sai+Kiran;%5BTITLE%5D+Shadow+Monarch+%26+LeetCode+Guardian+%282%2C173+Rating%29;%5BWEAPON%5D+Python+3+--+600+DSA+Dungeons+Conquered;%5BSTATS%5D+Top+1.07%25+Worldwide+%7C+116+Hard+Raids+Cleared;%5BSPELL%5D+ARISE...+Leveling+Up+Code+Every+Day;I+Alone+Level+Up+--+%EB%82%98+%ED%98%BC%EC%9E%90%EB%A7%8C+%EB%A0%88%EB%B2%A8%EC%97%85" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&size=23&duration=2800&pause=900&color=A855F7&center=true&vCenter=true&width=820&lines=%5BSYSTEM%5D+Awakened+S-Rank+Hunter%3A+Poreddy+Sai+Kiran;%5BTITLE%5D+Shadow+Monarch+%26+LeetCode+Guardian+%282%2C173+Rating%29;%5BWEAPON%5D+Python+3+--+600+DSA+Dungeons+Conquered;%5BSTATS%5D+Top+1.07%25+Worldwide+%7C+116+Hard+Raids+Cleared;%5BSPELL%5D+ARISE...+Leveling+Up+Code+Every+Day;I+Alone+Level+Up+--+%EB%82%98+%ED%98%BC%EC%9E%90%EB%A7%8C+%EB%A0%88%EB%B2%A8%EC%97%85" alt="Typing SVG" />
 </p>
 
 <br/>
@@ -62,7 +62,7 @@
 ```python
 class ShadowMonarch:
     """The Developer Who Conquered the System."""
-    hunter_name = "Porreddy Sai Kiran"
+    hunter_name = "Poreddy Sai Kiran"
     alias       = "poreddysaikiran6"
     rank        = "S-Class Hunter"
     class_type  = "Full Stack & Machine Learning Engineer"
@@ -362,5 +362,6 @@ class ShadowMonarch:
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=13&duration=4000&pause=1000&color=7C3AED&center=true&vCenter=true&width=620&lines=Crafted+with+dark+mana+by+Porreddy+Sai+Kiran;%22I+am+the+Monarch+of+Shadows.+I+Alone+Level+Up.%22;ARISE." alt="Footer typing" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=13&duration=4000&pause=1000&color=7C3AED&center=true&vCenter=true&width=620&lines=Crafted+with+dark+mana+by+Poreddy+Sai+Kiran;%22I+am+the+Monarch+of+Shadows.+I+Alone+Level+Up.%22;ARISE." alt="Footer typing" />
 </p>
+
