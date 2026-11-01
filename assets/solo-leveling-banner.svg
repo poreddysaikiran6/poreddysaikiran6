@@ -1,0 +1,335 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&amp;family=Orbitron:wght@700;900&amp;family=Fira+Code:wght@500;700&amp;display=swap');
+
+      /* ═══════ KEYFRAME ANIMATIONS ═══════ */
+      @keyframes arisePulse {
+        0%, 100% {
+          filter: drop-shadow(0 0 12px #a855f7) drop-shadow(0 0 30px #7c3aed);
+          letter-spacing: 0.32em;
+        }
+        50% {
+          filter: drop-shadow(0 0 25px #c084fc) drop-shadow(0 0 60px #a855f7) drop-shadow(0 0 90px #00f0ff);
+          letter-spacing: 0.36em;
+        }
+      }
+
+      @keyframes subGlow {
+        0%, 100% { opacity: 0.75; letter-spacing: 0.28em; }
+        50%      { opacity: 1;    letter-spacing: 0.32em; filter: drop-shadow(0 0 8px #a855f7); }
+      }
+
+      @keyframes ringCW {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(360deg); }
+      }
+
+      @keyframes ringCCW {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(-360deg); }
+      }
+
+      @keyframes coronaBreath {
+        0%, 100% { r: 52; opacity: 0.45; filter: drop-shadow(0 0 15px #7c3aed); }
+        50%      { r: 58; opacity: 0.85; filter: drop-shadow(0 0 35px #a855f7) drop-shadow(0 0 60px #00f0ff); }
+      }
+
+      @keyframes daggerGlow {
+        0%, 100% { filter: drop-shadow(0 0 8px #00f0ff) drop-shadow(0 0 18px #7c3aed); }
+        50%      { filter: drop-shadow(0 0 18px #38bdf8) drop-shadow(0 0 35px #c084fc); }
+      }
+
+      @keyframes flameWave {
+        0%, 100% { transform: translateY(0) scaleY(1); opacity: 0.5; }
+        50%      { transform: translateY(-8px) scaleY(1.08); opacity: 0.85; }
+      }
+
+      @keyframes flameWave2 {
+        0%, 100% { transform: translateY(0) scaleY(1); opacity: 0.4; }
+        50%      { transform: translateY(-12px) scaleY(1.12); opacity: 0.75; }
+      }
+
+      @keyframes particleFloatA {
+        0%   { transform: translate(0, 0); opacity: 0; }
+        15%  { opacity: 0.9; }
+        85%  { opacity: 0.5; }
+        100% { transform: translate(-14px, -150px); opacity: 0; }
+      }
+
+      @keyframes particleFloatB {
+        0%   { transform: translate(0, 0); opacity: 0; }
+        15%  { opacity: 0.95; }
+        85%  { opacity: 0.4; }
+        100% { transform: translate(16px, -170px); opacity: 0; }
+      }
+
+      @keyframes scanBeam {
+        0%   { transform: translateY(0); opacity: 0.7; }
+        100% { transform: translateY(300px); opacity: 0; }
+      }
+
+      @keyframes borderPulse {
+        0%, 100% { stroke: #7c3aed; opacity: 0.5; }
+        50%      { stroke: #00f0ff; opacity: 0.9; filter: drop-shadow(0 0 10px #00f0ff); }
+      }
+
+      .arise-title { font-family: 'Cinzel', serif; }
+      .scifi-sub   { font-family: 'Orbitron', sans-serif; }
+      .code-font   { font-family: 'Fira Code', monospace; }
+    </style>
+
+    <!-- ── Gradients ── -->
+    <radialGradient id="bannerBg" cx="50%" cy="55%" r="75%">
+      <stop offset="0%"   stop-color="#14002e"/>
+      <stop offset="45%"  stop-color="#080017"/>
+      <stop offset="100%" stop-color="#020008"/>
+    </radialGradient>
+
+    <linearGradient id="textGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#ffffff"/>
+      <stop offset="30%"  stop-color="#f5f3ff"/>
+      <stop offset="70%"  stop-color="#ddd6fe"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+
+    <linearGradient id="bladeLeft" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#00f0ff"/>
+      <stop offset="40%"  stop-color="#38bdf8"/>
+      <stop offset="80%"  stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#1e0538"/>
+    </linearGradient>
+
+    <linearGradient id="bladeRight" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#c084fc"/>
+      <stop offset="40%"  stop-color="#a855f7"/>
+      <stop offset="80%"  stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1e0538"/>
+    </linearGradient>
+
+    <linearGradient id="flameGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%"   stop-color="#020008" stop-opacity="0.95"/>
+      <stop offset="50%"  stop-color="#4c1d95" stop-opacity="0.6"/>
+      <stop offset="85%"  stop-color="#8b5cf6" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="flameGradCyan" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%"   stop-color="#020008" stop-opacity="0.95"/>
+      <stop offset="60%"  stop-color="#1e1b4b" stop-opacity="0.5"/>
+      <stop offset="90%"  stop-color="#0284c7" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="coronaGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="intenseGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ── Deep Abyss Void Background ── -->
+  <rect width="900" height="300" fill="url(#bannerBg)"/>
+
+  <!-- ── Cyber Tech Grid Matrix (Sci-Fi Ambient) ── -->
+  <g opacity="0.06" stroke="#00f0ff" stroke-width="1">
+    <line x1="50" y1="0" x2="50" y2="300"/><line x1="100" y1="0" x2="100" y2="300"/>
+    <line x1="150" y1="0" x2="150" y2="300"/><line x1="200" y1="0" x2="200" y2="300"/>
+    <line x1="250" y1="0" x2="250" y2="300"/><line x1="300" y1="0" x2="300" y2="300"/>
+    <line x1="350" y1="0" x2="350" y2="300"/><line x1="400" y1="0" x2="400" y2="300"/>
+    <line x1="450" y1="0" x2="450" y2="300"/><line x1="500" y1="0" x2="500" y2="300"/>
+    <line x1="550" y1="0" x2="550" y2="300"/><line x1="600" y1="0" x2="600" y2="300"/>
+    <line x1="650" y1="0" x2="650" y2="300"/><line x1="700" y1="0" x2="700" y2="300"/>
+    <line x1="750" y1="0" x2="750" y2="300"/><line x1="800" y1="0" x2="800" y2="300"/>
+    <line x1="850" y1="0" x2="850" y2="300"/>
+
+    <line x1="0" y1="50" x2="900" y2="50"/><line x1="0" y1="100" x2="900" y2="100"/>
+    <line x1="0" y1="150" x2="900" y2="150"/><line x1="0" y1="200" x2="900" y2="200"/>
+    <line x1="0" y1="250" x2="900" y2="250"/>
+  </g>
+
+  <!-- ── Scanning Laser Beam ── -->
+  <line x1="0" y1="0" x2="900" y2="0" stroke="#00f0ff" stroke-width="1.2" opacity="0.4"
+        style="animation: scanBeam 4.5s linear infinite;"/>
+
+  <!-- ── Outer Sci-Fi Border & Corner Brackets ── -->
+  <rect x="2" y="2" width="896" height="296" rx="12" fill="none" stroke-width="1.5"
+        style="animation: borderPulse 4s ease-in-out infinite;"/>
+
+  <path d="M 16 35 L 16 16 L 35 16" fill="none" stroke="#00f0ff" stroke-width="2.5"/>
+  <path d="M 865 16 L 884 16 L 884 35" fill="none" stroke="#00f0ff" stroke-width="2.5"/>
+  <path d="M 16 265 L 16 284 L 35 284" fill="none" stroke="#00f0ff" stroke-width="2.5"/>
+  <path d="M 884 265 L 884 284 L 865 284" fill="none" stroke="#00f0ff" stroke-width="2.5"/>
+
+  <!-- Top System Tag Pill -->
+  <g transform="translate(450, 22)">
+    <rect x="-160" y="-10" width="320" height="20" rx="10" fill="#0c0120" stroke="#7c3aed" stroke-width="1"/>
+    <text x="0" y="4" text-anchor="middle" fill="#00f0ff" font-size="9" font-weight="700" letter-spacing="3" class="code-font">
+      ✦ SYSTEM NOTIFICATION : MONARCH OVERRIDE ✦
+    </text>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════════════ -->
+  <!-- RISING SHADOW MIST & FLAME TENDRILS (NO MORE BOWLING PINS!)       -->
+  <!-- ══════════════════════════════════════════════════════════════════ -->
+  <g style="animation: flameWave 4s ease-in-out infinite;">
+    <!-- Left Flank Shadow Flames -->
+    <path d="M0,300 L0,230 Q40,190 70,240 Q110,180 140,250 Q180,170 210,240 Q250,200 290,260 Q340,180 380,300 Z"
+          fill="url(#flameGrad)" opacity="0.6"/>
+    <!-- Right Flank Shadow Flames -->
+    <path d="M520,300 Q560,180 610,260 Q650,200 690,240 Q720,170 760,250 Q790,180 830,240 Q860,190 900,230 L900,300 Z"
+          fill="url(#flameGrad)" opacity="0.6"/>
+  </g>
+
+  <g style="animation: flameWave2 5s ease-in-out infinite 0.5s;">
+    <path d="M0,300 L0,245 Q60,205 100,260 Q150,195 200,265 Q260,210 320,270 Q370,220 420,300 Z"
+          fill="url(#flameGradCyan)" opacity="0.4"/>
+    <path d="M480,300 Q530,220 580,270 Q640,210 700,265 Q750,195 800,260 Q840,205 900,245 L900,300 Z"
+          fill="url(#flameGradCyan)" opacity="0.4"/>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════════════ -->
+  <!-- FLOATING MANA PARTICLES                                            -->
+  <!-- ══════════════════════════════════════════════════════════════════ -->
+  <g>
+    <circle cx="280" cy="240" r="2.5" fill="#00f0ff" style="animation: particleFloatA 3.2s ease-out infinite;"/>
+    <circle cx="340" cy="260" r="1.8" fill="#c084fc" style="animation: particleFloatB 3.8s ease-out 0.8s infinite;"/>
+    <circle cx="560" cy="250" r="2.2" fill="#38bdf8" style="animation: particleFloatA 3.5s ease-out 1.2s infinite;"/>
+    <circle cx="620" cy="235" r="2.0" fill="#a855f7" style="animation: particleFloatB 2.9s ease-out 0.4s infinite;"/>
+    <circle cx="450" cy="270" r="2.5" fill="#00f0ff" style="animation: particleFloatA 4.0s ease-out 1.8s infinite;"/>
+    <circle cx="210" cy="270" r="1.5" fill="#a855f7" style="animation: particleFloatB 3.1s ease-out 2.1s infinite;"/>
+    <circle cx="690" cy="270" r="1.6" fill="#00f0ff" style="animation: particleFloatA 3.6s ease-out 1.5s infinite;"/>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════════════ -->
+  <!-- CENTERPIECE : SHADOW MONARCH DUAL DAGGERS & RITUAL MAGIC SEAL      -->
+  <!-- (REPLACING THE STRANGE OVAL WITH AUTHENTIC ANIME / SCI-FI WEAPONS) -->
+  <!-- ══════════════════════════════════════════════════════════════════ -->
+  <g transform="translate(450, 195)">
+
+    <!-- Pulsing Eclipse / Dark Sun Corona -->
+    <circle cx="0" cy="0" r="54" fill="#0c001f" stroke="#7c3aed" stroke-width="2"
+            style="animation: coronaBreath 3.5s ease-in-out infinite;"/>
+    <circle cx="0" cy="0" r="46" fill="#03000a"/>
+
+    <!-- Outer Rotating Runic Magic Circle (Clockwise) -->
+    <g style="transform-origin: 0 0; animation: ringCW 22s linear infinite;">
+      <circle cx="0" cy="0" r="76" fill="none" stroke="#7c3aed" stroke-width="1.2" stroke-dasharray="14 8 4 8" opacity="0.7"/>
+      <circle cx="0" cy="0" r="84" fill="none" stroke="#00f0ff" stroke-width="0.8" stroke-dasharray="24 16" opacity="0.4"/>
+      <!-- Ancient Rune Glyphs -->
+      <text x="-4" y="-73" font-size="8" fill="#a855f7" font-family="serif">ᚱ</text>
+      <text x="71"  y="3"  font-size="8" fill="#a855f7" font-family="serif">ᛉ</text>
+      <text x="-4"  y="79" font-size="8" fill="#a855f7" font-family="serif">ᚾ</text>
+      <text x="-78" y="3"  font-size="8" fill="#a855f7" font-family="serif">ᛟ</text>
+    </g>
+
+    <!-- Inner Rotating Sacred Hexagram (Counter-Clockwise) -->
+    <g style="transform-origin: 0 0; animation: ringCCW 16s linear infinite;">
+      <polygon points="0,-64 55.4,32 -55.4,32" fill="none" stroke="#a855f7" stroke-width="1" opacity="0.35"/>
+      <polygon points="0,64 -55.4,-32 55.4,-32" fill="none" stroke="#00f0ff" stroke-width="1" opacity="0.35"/>
+      <circle cx="0" cy="0" r="64" fill="none" stroke="#c084fc" stroke-width="0.7" stroke-dasharray="6 6" opacity="0.5"/>
+    </g>
+
+    <!-- ── CROSSED SHADOW MONARCH DAGGERS ── -->
+    <g style="animation: daggerGlow 3s ease-in-out infinite;">
+
+      <!-- DAGGER 1: LEFT DAGGER (Kamish's Wrath Style - Rotated -45deg) -->
+      <g transform="rotate(-42)">
+        <!-- Pommel Gem -->
+        <circle cx="0" cy="72" r="4.5" fill="#00f0ff" filter="url(#intenseGlow)"/>
+        <!-- Grip -->
+        <rect x="-3" y="44" width="6" height="26" rx="2" fill="#1e1138" stroke="#7c3aed" stroke-width="1"/>
+        <line x1="-3" y1="50" x2="3" y2="52" stroke="#00f0ff" stroke-width="1"/>
+        <line x1="-3" y1="56" x2="3" y2="58" stroke="#00f0ff" stroke-width="1"/>
+        <line x1="-3" y1="62" x2="3" y2="64" stroke="#00f0ff" stroke-width="1"/>
+        <!-- Crossguard (Sharp demonic bat-wing shape) -->
+        <path d="M-22,44 Q-10,42 0,45 Q10,42 22,44 Q14,37 0,40 Q-14,37 -22,44 Z"
+              fill="#2e1065" stroke="#a855f7" stroke-width="1.2"/>
+        <!-- Blade (Sharp curved menacing assassin dagger) -->
+        <path d="M0,40 Q-9,15 -11,-15 Q-12,-45 0,-70 Q12,-45 11,-15 Q9,15 0,40 Z"
+              fill="url(#bladeLeft)" stroke="#38bdf8" stroke-width="1.5" filter="url(#intenseGlow)"/>
+        <!-- Inner Blade Fuller / Blood Groove with Mana Glow -->
+        <line x1="0" y1="32" x2="0" y2="-45" stroke="#ffffff" stroke-width="1.2" opacity="0.9"/>
+        <line x1="0" y1="32" x2="0" y2="-45" stroke="#00f0ff" stroke-width="3" opacity="0.7" filter="url(#intenseGlow)"/>
+      </g>
+
+      <!-- DAGGER 2: RIGHT DAGGER (Demon King's Dagger Style - Rotated +45deg) -->
+      <g transform="rotate(42)">
+        <!-- Pommel Gem -->
+        <circle cx="0" cy="72" r="4.5" fill="#c084fc" filter="url(#intenseGlow)"/>
+        <!-- Grip -->
+        <rect x="-3" y="44" width="6" height="26" rx="2" fill="#1e1138" stroke="#a855f7" stroke-width="1"/>
+        <line x1="-3" y1="50" x2="3" y2="52" stroke="#c084fc" stroke-width="1"/>
+        <line x1="-3" y1="56" x2="3" y2="58" stroke="#c084fc" stroke-width="1"/>
+        <line x1="-3" y1="62" x2="3" y2="64" stroke="#c084fc" stroke-width="1"/>
+        <!-- Crossguard -->
+        <path d="M-22,44 Q-10,42 0,45 Q10,42 22,44 Q14,37 0,40 Q-14,37 -22,44 Z"
+              fill="#2e1065" stroke="#c084fc" stroke-width="1.2"/>
+        <!-- Blade -->
+        <path d="M0,40 Q-9,15 -11,-15 Q-12,-45 0,-70 Q12,-45 11,-15 Q9,15 0,40 Z"
+              fill="url(#bladeRight)" stroke="#c084fc" stroke-width="1.5" filter="url(#intenseGlow)"/>
+        <!-- Inner Blade Fuller -->
+        <line x1="0" y1="32" x2="0" y2="-45" stroke="#ffffff" stroke-width="1.2" opacity="0.9"/>
+        <line x1="0" y1="32" x2="0" y2="-45" stroke="#a855f7" stroke-width="3" opacity="0.7" filter="url(#intenseGlow)"/>
+      </g>
+
+      <!-- Central Arc Spark (Intersection of Blades) -->
+      <circle cx="0" cy="0" r="6" fill="#ffffff" filter="url(#intenseGlow)"/>
+      <circle cx="0" cy="0" r="14" fill="#00f0ff" opacity="0.6" filter="url(#intenseGlow)"/>
+    </g>
+
+    <!-- Runes Floating Below Daggers -->
+    <text x="0" y="88" text-anchor="middle" fill="#00f0ff" font-size="10" font-weight="700" letter-spacing="4" class="scifi-sub">
+      ⚔ KAMISH'S WRATH // SHADOW BLADES ⚔
+    </text>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════════════ -->
+  <!-- TYPOGRAPHY : "A R I S E ." & SHADOW MONARCH TITLES               -->
+  <!-- ══════════════════════════════════════════════════════════════════ -->
+  <g transform="translate(450, 85)">
+    <!-- Main Glowing Title: ARISE. -->
+    <text x="0" y="0" text-anchor="middle" fill="url(#textGold)" font-size="54" font-weight="900"
+          class="arise-title" style="animation: arisePulse 3.5s ease-in-out infinite;">
+      A R I S E .
+    </text>
+
+    <!-- Subtitle: THE SHADOW MONARCH DEVELOPER -->
+    <text x="0" y="28" text-anchor="middle" fill="#c084fc" font-size="13" font-weight="700"
+          class="scifi-sub" style="animation: subGlow 3s ease-in-out infinite;">
+      — THE SHADOW MONARCH DEVELOPER —
+    </text>
+
+    <!-- Korean Authentic Moniker -->
+    <text x="0" y="46" text-anchor="middle" fill="#64748b" font-size="11" font-weight="600" letter-spacing="6" class="code-font">
+      나  혼  자  만  레  벨  업
+    </text>
+  </g>
+
+  <!-- ── Lateral Sci-Fi HUD Badges ── -->
+  <g transform="translate(45, 150)">
+    <line x1="0" y1="0" x2="40" y2="0" stroke="#00f0ff" stroke-width="1.5"/>
+    <text x="48" y="4" fill="#38bdf8" font-size="9" font-weight="700" letter-spacing="2" class="scifi-sub">
+      RANK: S-CLASS
+    </text>
+    <text x="48" y="16" fill="#64748b" font-size="8" class="code-font">
+      MANA: UNLIMITED
+    </text>
+  </g>
+
+  <g transform="translate(855, 150)">
+    <line x1="0" y1="0" x2="-40" y2="0" stroke="#a855f7" stroke-width="1.5"/>
+    <text x="-48" y="4" text-anchor="end" fill="#c084fc" font-size="9" font-weight="700" letter-spacing="2" class="scifi-sub">
+      CLASS: MONARCH
+    </text>
+    <text x="-48" y="16" text-anchor="end" fill="#64748b" font-size="8" class="code-font">
+      ARMY: SUMMONED
+    </text>
+  </g>
+
+</svg>
